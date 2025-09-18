@@ -1,6 +1,6 @@
-const Task = require("../models/Task");
-const User = require("../models/User");
-const excelJs = require("exceljs");
+import Task from "../models/Task.js";
+import User from"../models/User.js";
+import excelJs from "exceljs";
 
 // @desc Export all tasks as an Excel file
 // @route GET /api/reports/export/tasks
@@ -107,7 +107,7 @@ const exportUsersReport = async (req, res) => {
   }
 };
 
-module.exports = {
+export {
   exportTasksReport,
   exportUsersReport,
 };

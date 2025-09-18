@@ -1,10 +1,10 @@
-const express = require("express")
-const {protect, adminOnly} = require("../middlewares/authMiddleware")
-const {exportTasksReport, exportUsersReport} = require("../controllers/reportController")
+import express from "express";
+import {protect, adminOnly} from "../middlewares/authMiddleware.js";
+import {exportTasksReport, exportUsersReport} from "../controllers/reportController.js";
 
 const router = express.Router();
 
 router.get("/export/tasks", protect, adminOnly, exportTasksReport); // Export all tasks as Excel/PDF
 router.get("/export/users", protect, adminOnly, exportUsersReport); //Export user-task report
 
-module.exports = router;
+export default router;

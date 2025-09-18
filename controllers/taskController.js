@@ -1,4 +1,4 @@
-const Task = require("../models/Task");
+import Task from "../models/Task.js";
 
 //@desc  Get All tasks
 //@route GET /api/tasks
@@ -387,7 +387,7 @@ const getUserDashboardData = async (req, res) => {
   }
 };
 
-module.exports = {
+export {
   getTasks,
   getTaskById,
   createTask,

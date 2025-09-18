@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const todoSchema = new mongoose.Schema({
     text: { type: String, required: true },
@@ -23,4 +23,5 @@ const taskSchema = new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model('Task', taskSchema);
+const Task = mongoose.model('Task', taskSchema);
+export default Task

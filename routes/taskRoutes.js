@@ -1,6 +1,6 @@
-const express = require("express");
-const { protect, adminOnly } = require("../middlewares/authMiddleware");
-const {
+import express from "express";
+import { protect, adminOnly } from "../middlewares/authMiddleware.js";
+import {
   getTasks,
   getTaskById,
   createTask,
@@ -10,8 +10,7 @@ const {
   updateTaskChecklist,
   getDashboardData,
   getUserDashboardData,
-} = require("../controllers/taskController");
-
+} from "../controllers/taskController.js";
 
 
 const router = express.Router();
@@ -28,4 +27,4 @@ router.put("/:id/status", protect, updateTaskStatus); //Update task status
 router.put("/:id/todo", protect, updateTaskChecklist); //Update task checklist
 
 
-module.exports = router;
+export default router;

@@ -1,8 +1,8 @@
-const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+import jwt from 'jsonwebtoken';
+import User from '../models/User.js';
 
 // Middleware to protect routes
-const protect = async (req, res, next) => {
+export const protect = async (req, res, next) => {
     try{
         let token = req.headers.authorization;
 
@@ -22,7 +22,7 @@ const protect = async (req, res, next) => {
 };
 
 //Middleware for Admin-only access
-const adminOnly = (req, res, next) => {
+export const adminOnly = (req, res, next) => {
     if(req.user && req.user.role === 'admin') {
         next();
     }else{
@@ -30,7 +30,4 @@ const adminOnly = (req, res, next) => {
     }
 }
 
-module.exports = {
-    protect,    
-    adminOnly
-};
+

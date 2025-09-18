@@ -1,5 +1,5 @@
-const Task = require("../models/Task");
-const User = require("../models/User");
+import Task from "../models/Task.js";
+import User from "../models/User.js";
 
 
 
@@ -58,7 +58,7 @@ const deleteUser = async (req, res) =>{
 }
 
 
-module.exports = {
+export  {
   getUsers,
   getUserById,
   deleteUser
